@@ -1,0 +1,33 @@
+#import json library
+import json
+
+#https://stackoverflow.com/questions/51788550/parsing-json-nested-dictionary-using-python
+
+#basic nested JSON data
+json_string = """
+{
+  "items": [
+    {
+      "id": "12345",
+      "links": {
+        "self": "https://www.google.com"
+      },
+      "name": "beast",
+      "type": "Device"
+    }
+  ],
+  "links": {
+    "self": "https://www.google.com"
+  },
+  "paging": {
+    "count": 1,
+    "limit": 1,
+    "offset": 0,
+    "pages": 1
+  }
+}
+"""
+#load json data
+data = json.loads(json_string)
+#print data string, items array, value 0, type value
+print( data['items'][0]['type'])
